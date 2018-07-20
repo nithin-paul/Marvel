@@ -1,0 +1,15 @@
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.DAC.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.DAC.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.Model.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.Utils.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.Model.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\Marvel.Utils.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\obj\Debug\Marvel.DAC.csprojResolveAssemblyReference.cache
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\obj\Debug\Marvel.DAC.csproj.CoreCompileInputs.cache
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\obj\Debug\Marvel.DAC.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\obj\Debug\Marvel.DAC.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\AutoMapper.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\System.ValueTuple.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\AutoMapper.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\AutoMapper.xml
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.DAC\bin\Debug\System.ValueTuple.xml

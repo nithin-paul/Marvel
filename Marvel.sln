@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel", "Marvel\Marvel.csproj", "{55A9F86A-7AE2-467F-9BC8-5ACC45D7375C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelAdmin", "MarvelAdmin\MarvelAdmin.csproj", "{7C14893C-8273-4AE6-8704-7FE141AF0CAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.DAC", "Marvel.DAC\Marvel.DAC.csproj", "{20414DDD-0436-46D1-9E89-7E8385297BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.BLL", "Marvel.BLL\Marvel.BLL.csproj", "{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Model", "Marvel.Model\Marvel.Model.csproj", "{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Utils", "Marvel.Utils\Marvel.Utils.csproj", "{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55A9F86A-7AE2-467F-9BC8-5ACC45D7375C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A9F86A-7AE2-467F-9BC8-5ACC45D7375C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A9F86A-7AE2-467F-9BC8-5ACC45D7375C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A9F86A-7AE2-467F-9BC8-5ACC45D7375C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C14893C-8273-4AE6-8704-7FE141AF0CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C14893C-8273-4AE6-8704-7FE141AF0CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C14893C-8273-4AE6-8704-7FE141AF0CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C14893C-8273-4AE6-8704-7FE141AF0CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20414DDD-0436-46D1-9E89-7E8385297BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20414DDD-0436-46D1-9E89-7E8385297BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20414DDD-0436-46D1-9E89-7E8385297BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20414DDD-0436-46D1-9E89-7E8385297BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64F0D08C-35B8-439D-BDB5-C81A86DFBD73}
+	EndGlobalSection
+EndGlobal

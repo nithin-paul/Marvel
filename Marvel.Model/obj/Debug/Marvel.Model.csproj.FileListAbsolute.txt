@@ -1,0 +1,5 @@
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.Model\bin\Debug\Marvel.Model.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.Model\bin\Debug\Marvel.Model.pdb
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.Model\obj\Debug\Marvel.Model.csproj.CoreCompileInputs.cache
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.Model\obj\Debug\Marvel.Model.dll
+E:\WORKS\Marvel\MarvelWebSite New\Marvel\Marvel.Model\obj\Debug\Marvel.Model.pdb

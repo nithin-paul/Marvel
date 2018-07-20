@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/Content/Images/favicon.ico">
+    <link rel="shortcut icon" href="~/Content/Images/favicon.ico">
+    <link rel="stylesheet" href="~/Content/stuck.css">
+    <link rel="stylesheet" href="~/Content/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/form.css">
+    <link rel="stylesheet" href="~/Content/touchTouch.css">
+    <link rel="stylesheet" href="~/Content/camera.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    @RenderSection("styles", false)
+</head>
+<body>
+    <header>
+        <div id="stuck_container">
+            <div class="container">
+                <div class="row">
+                    <div class="grid_12">
+                        <h1>
+                            <a href="index.html">
+                                <img src="~/Content/Images/logo.png" alt="Your Happy Family">
+                            </a>
+                        </h1>
+                        <div class="menu_block ">
+                            <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                                <ul class="sf-menu">
+                                    <li><a >File Upload</a></li>
+                                    <li><a>Home</a></li>
+                                    <li><a >Portfolio</a></li>
+                                </ul>
+                            </nav>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery-migrate-1.1.1.js"></script>
+    <script src="~/Scripts/script.js"></script>
+    <script src="~/Scripts/superfish.js"></script>
+    <script src="~/Scripts/jquery.equalheights.js"></script>
+    <script src="~/Scripts/jquery.mobilemenu.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script src="~/Scripts/tmStickUp.js"></script>
+    <script src="~/Scripts/jquery.ui.totop.js"></script>
+    <script src="~/Scripts/touchTouch.jquery.js"></script>
+    <script src="~/Scripts/owl.carousel.js"></script>
+    <script src="~/Scripts/sForm.js"></script>
+    <script src="~/Scripts/camera.js"></script>
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <script src="~/Scripts/jquery.mobile.customized.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

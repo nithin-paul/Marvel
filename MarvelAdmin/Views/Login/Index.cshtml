@@ -1,10 +1,4 @@
-﻿@model MarvelAdmin.Models.UserVM
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿@model MarvelAdmin.Models.LoginVM
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,24 +36,26 @@
                 <span class="login100-form-title p-b-26">
                     LOGIN
                 </span>
+                   @if (TempData["Success"] != null) { <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+                }
+                @if (TempData["Error"] != null)
+                {
+                    <p class="alert alert-danger" id="errorMessage">@Html.Raw( TempData["Error"])</p>
+                }
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="wrap-input100 validate-input">
-                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "input100" } })
-                        <span class="focus-input100" data-placeholder="Email"></span>
-                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = (Model != null && !string.IsNullOrEmpty(Model.UserName)) ? new { @class = "input100 has-val" } : new { @class = "input100" } })
+                        <span class="focus-input100" data-placeholder="username"></span>
                     </div>
                     <div class="wrap-input100 validate-input">
                         <span class="btn-show-pass">
                             <i class="zmdi zmdi-eye"></i>
                         </span>
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type="password",
-                       @class = " input100" } })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = (Model != null && !string.IsNullOrEmpty(Model.Password)) ? new { @class = "input100 has-val", @type = "password" } : new { @class = "input100", @type = "password" } })
                         <span class="focus-input100" data-placeholder="Password"></span>
 
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">

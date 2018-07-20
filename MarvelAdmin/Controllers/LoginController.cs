@@ -7,6 +7,8 @@ using Marvel.Model;
 using Marvel.Utils;
 using MarvelAdmin.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -53,6 +55,13 @@ namespace MarvelAdmin
         {
             if (!ModelState.IsValid)
             {
+               List<ModelErrorCollection> errors =  ModelState.Select(x => x.Value.Errors)
+                           .Where(y => y.Count > 0)
+                           .ToList();
+                foreach (ModelErrorCollection error in errors)
+                {
+                    TempData["Error"] += error[0].ErrorMessage + "<br/>";
+                }
                 return View("Index", model);
             }
 

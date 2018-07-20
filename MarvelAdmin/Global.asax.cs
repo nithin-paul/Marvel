@@ -38,5 +38,21 @@ namespace MarvelAdmin
                 }
             }
         }
+
+        /// <summary>
+        /// Handles the Error event of the Application control.
+        /// </summary>
+        /// <param name="src">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        protected void Application_Error(object src, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+
+            // Check for a valid application error status
+            if (ex != null && (ex.TargetSite.Name == "CheckVirtualFileExists" || ex.TargetSite.Name == "GetVPathBuildResultInternal") && ex.Message.Contains(".aspx"))
+            {
+                return;
+            }
+        }
     }
 }

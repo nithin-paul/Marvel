@@ -58,7 +58,7 @@ namespace Marvel.DAC
                 {
                     DbCommand cmd = DbFactory.CreateCommand();
                     cmd.Connection = dbConnection;
-                    cmd.CommandText = "SELECT id,user_name,password,role FROM user WHERE user_name = @userName AND password= @password";
+                    cmd.CommandText = "SELECT id,user_name,password,role FROM [user] WHERE user_name = @userName AND password= @password";
                     cmd.CommandType = CommandType.Text;
                     cmd.AddParameterWithValue("@userName", userName);
                     cmd.AddParameterWithValue("@password", password);

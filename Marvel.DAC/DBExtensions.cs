@@ -2,6 +2,8 @@
 // Copyright (c) SchoolSpeak Technologies Private Limited. All rights reserved.
 // </copyright>
 
+using System;
+using System.Data;
 using System.Data.Common;
 
 namespace CB.IntegrationService.DAL
@@ -25,6 +27,14 @@ namespace CB.IntegrationService.DAL
             dbCommand.Parameters.Add(parameter);
         }
 
+        internal static void AddParameter(this DbCommand dbCommand, string parameterName,object fieldValue, DbType dbType)
+        {
+            DbParameter parameter = dbCommand.CreateParameter();
+            parameter.ParameterName = parameterName;
+            parameter.Value = fieldValue??DBNull.Value;
+            parameter.DbType = dbType;
+            dbCommand.Parameters.Add(parameter);
+        }
         /// <summary>
         /// Creates a DbConnection using the provided factory and the specified connection string.
         /// </summary>

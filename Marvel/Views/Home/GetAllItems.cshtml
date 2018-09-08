@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Marvel.Models.ItemVM>
+@if (Model != null)
+{
+    <div id="owl">
+    @foreach (var item in Model)
+    {
+        if (item.Images.Count >0)
+        {
+            <div class="item"><a href="/Home/Item/@item.Id"><img src="~/Content/Images/@(Path.GetFileNameWithoutExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name) + "_thumb" + Path.GetExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name))" alt=""></a></div>
+        }
+    }
+    </div>
+
+}

@@ -1,0 +1,94 @@
+﻿@model MarvelAdmin.Models.ItemVM
+@{
+    ViewBag.Title = "Details";
+}
+@if (Model != null)
+{
+    <div class="row single">
+        <div class="det">
+            <div class="single_left">
+                <div class="grid images_3_of_2">
+                    <div class="flexslider">
+                        <!-- FlexSlider -->
+                        <script src="~/Content/js/imagezoom.js"></script>
+                        <script defer="" src="~/Content/js/jquery.flexslider.js"></script>
+                        <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen">
+
+                        <script>
+                            // Can also be used with $(document).ready()
+                            $(window).load(function () {
+                                $('.flexslider').flexslider({
+                                    animation: "slide",
+                                    controlNav: "thumbnails"
+                                });
+                            });
+                        </script>
+                        <!-- //FlexSlider-->
+
+
+
+                        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                            @if (Model.Images != null && Model.Images.Count > 0)
+                            {
+                                @Html.Raw("<ul class=\"slides\" style=\"transition-duration: 0.6s; transform: translate3d(-864px, 0px, 0px);\">");
+                                int i = 0;
+                                foreach (var image in Model.Images)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <li data-thumb="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_thumb" + Path.GetExtension(image.Name))" class="clone" aria-hidden="true" style="width: 288px; float: left; display: block;">
+                                            <div class="thumb-image"> <img src="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li data-thumb="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_thumb" + Path.GetExtension(image.Name))" class="" style="width: 288px; float: left; display: block;">
+                                            <div class="thumb-image"> <img src="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                        </li>
+                                    }
+                                    i++;
+                                }
+                                @Html.Raw("</ul>");
+                            }
+                        </div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul>
+                    </div>
+                </div>
+                <div class="desc1 span_3_of_2">
+                    <h3>
+                        @Model.Name
+                        <ul class="w_nav">
+                            <li><a href="/Home/Items/@Model.Id?catId=@Model.CategoryId">Edit</a></li> |
+                            <li><a href="/Home/Items?catId=@Model.CategoryId">Add Items </a></li> |
+                            <li><a href="/Home/Items/Delete/@Model.Id">Delete </a></li>
+                        </ul>
+                    </h3>
+                    <div class="clearfix"></div>
+                    <span class="brand">Category: <a href="#">@((ViewBag.categoryName) != null ? ViewBag.categoryName : string.Empty) </a></span>
+                    <p>@Model.Description</p>
+                    <div class="price">
+                        <span class="text">Price:</span>
+                        @if (Model.OfferPercent > 0)
+                        {
+                            var offerPrice = Model.Price - (Model.Price * (Model.OfferPercent / 100));
+                            @Html.Raw("<span class=\"price-new\">Rs." + @offerPrice + "</span><span class=\"price-old\">Rs." + Model.Price + "</span>");
+                        }
+                        else
+                        {
+                            @Html.Raw("<span class=\"price-new\">Rs." + @Model.Price + "</span>");
+                        }
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="single-bottom1">
+                <h6>Details</h6>
+                <p class="prod-desc">@Model.DetailDescription</p>
+            </div>
+            <div class="single-bottom2">
+                <h6>Related Products</h6>
+                @Html.Action("RelatedItemListing", "Home", new { id = Model.CategoryId, itemId = Model.Id })
+                
+            </div>
+        </div>
+    </div>
+}

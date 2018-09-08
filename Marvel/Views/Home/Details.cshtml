@@ -1,0 +1,86 @@
+﻿@model Marvel.Models.ItemVM
+@{
+    ViewBag.Title = "Details";
+}
+<section class="content">
+    <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen">
+    <div class="container">
+        <div class="row" style="padding: 2%;">
+            @if (Model != null)
+            {
+                <div class="flexslider block1" style="width:43%;float:left;padding:10px">
+                    <!-- FlexSlider -->
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;border:none">
+                        @if (Model.Images != null && Model.Images.Count > 0)
+                        {
+                            @Html.Raw("<ul class=\"slides\" style=\"transition-duration: 0.6s; transform: translate3d(-864px, 0px, 0px);\">");
+                            int i = 0;
+                            foreach (var image in Model.Images)
+                            {
+                                if (i == 0)
+                                {
+                                    <li data-thumb="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" class="clone" aria-hidden="true" style="width: 288px; float: left; display: block;">
+                                        <div class="thumb-image"> <img src="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li data-thumb="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" class="" style="width: 288px; float: left; display: block;">
+                                        <div class="thumb-image"> <img src="/Content/images/@(Path.GetFileNameWithoutExtension(image.Name) + "_detail" + Path.GetExtension(image.Name))" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
+                                    </li>
+                                }
+                                i++;
+                            }
+                            @Html.Raw("</ul>");
+                        }
+                    </div>
+                    <ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul>
+                </div>
+                <div style="float:left;font-size:16px;max-width:40%;padding-left:5%">
+                    <h3 style="padding-top:0%">
+                        @Model.Name
+                    </h3>
+                    <div class="clearfix"></div>
+                    <span class="brand">Category: <a href="#" style="color:#dd6d8c">@((ViewBag.categoryName) != null ? ViewBag.categoryName : string.Empty) </a></span>
+                    <p>@Model.Description</p>
+                    <span class="text">Price: </span>
+                    @if (Model.OfferPercent > 0)
+                    {
+                        var offerPrice = Model.Price - (Model.Price * (Model.OfferPercent / 100));
+                        @Html.Raw("<span class='price-new'>Rs." + @offerPrice + "</span> <del><span class='price-old'> Rs." + Model.Price + "</span></del>");
+                    }
+                    else
+                    {
+                        @Html.Raw("<span class=\"price-new\">Rs." + @Model.Price + "</span>");
+                    }
+                    <p style="margin-top:20px">@Model.DetailDescription</p>
+                </div>
+
+            }
+        </div>
+        @*<div>
+            <h3>
+                Related Products
+            </h3>
+            @Html.Action("RelatedItemListing", "Home", new { id = Model.CategoryId, itemId = Model.Id })
+        </div>*@
+    </div>
+</section>
+    @section scripts
+{
+        <script src="/Content/js/jquery.nicescroll.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/imagezoom.js"></script>
+        <script defer="" src="~/Content/js/jquery.flexslider.js"></script>
+        <script>
+            // Can also be used with $(document).ready()
+            $(document).ready(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlNav: "thumbnails"
+                });
+                $().UItoTop({ easingType: 'easeOutQuart' });
+                $('#stuck_container').tmStickUp({});
+            });
+        </script>
+    }

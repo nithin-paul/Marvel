@@ -154,6 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\ItemVM.cs" />
+    <Compile Include="Models\SliderVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,10 +200,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Home\CategoriesList.cshtml" />
+    <Content Include="Views\Home\CategoriesMenu.cshtml" />
+    <Content Include="Views\Home\GetAllItems.cshtml" />
+    <Content Include="Views\Home\ItemListing.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\RelatedItemListing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -214,6 +223,20 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Marvel.BLL\Marvel.BLL.csproj">
+      <Project>{92634A11-7B68-47DF-8DC9-AD3BCFA310EF}</Project>
+      <Name>Marvel.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvel.Model\Marvel.Model.csproj">
+      <Project>{140BF456-5B6D-4A17-9CDA-BBB0B87B8171}</Project>
+      <Name>Marvel.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvel.Utils\Marvel.Utils.csproj">
+      <Project>{EEAA5BA0-7C17-4517-8817-6AAC07ACE8F1}</Project>
+      <Name>Marvel.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

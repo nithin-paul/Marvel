@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using Marvel.Model;
+using Marvel.Models;
+using Marvel.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Marvel.App_Start
+namespace Marvel
 {
     public class MapperConfig
     {
@@ -12,9 +15,11 @@ namespace Marvel.App_Start
         {
             MapperConfiguration mapperConfiguration = new MapperConfiguration(cfg =>
             {
-                // Map from MessageSummaryDTO to MessageSummary
-                //cfg.CreateMap<MessageSummaryDTO, MessageSummaryVM>();
+                cfg.CreateMap<SliderDTO, SliderVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
+                cfg.CreateMap<CategoryDTO, CategoryVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
+                cfg.CreateMap<ItemDTO, ItemVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
             });
+            MapperManager.RegisterMappings(mapperConfiguration);
         }
     }
 }

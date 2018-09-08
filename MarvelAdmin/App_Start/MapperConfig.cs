@@ -15,7 +15,10 @@ namespace MarvelAdmin
         {
             MapperConfiguration mapperConfiguration = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<UserDTO, UserVM>();
+                cfg.CreateMap<UserDTO, UserVM>().ReverseMap();
+                cfg.CreateMap<CategoryDTO, CategoryVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
+                cfg.CreateMap<ItemDTO, ItemVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
+                cfg.CreateMap<SliderDTO, SliderVM>().ForMember(x => x.Image, opt => opt.Ignore()).ReverseMap();
             });
             MapperManager.RegisterMappings(mapperConfiguration);
         }

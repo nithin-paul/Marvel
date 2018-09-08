@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MarvelAdmin.Models.ItemVM>
+
+@{ int i = 0;}
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        if (i==0)
+        {
+            @Html.Raw("<div class=\"grids_of_4\">");
+        }
+        <div class="grid1_of_4">
+            <div class="content_box">
+                <a href="/Home/Details/@item.Id">
+                    @if (item.Images != null && item.Images.FirstOrDefault(x => x.IsPrimary) != null)
+                    {
+                        <img src="~/Content/Images/@(Path.GetFileNameWithoutExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name) + "_thumb" + Path.GetExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name))" class="img-responsive" alt="">
+                    }
+                    else
+                    {
+                        // default image
+                    }
+                </a>
+                <h4>
+                    @Html.ActionLink(item.Name, "Details", "Home", new { id = item.Id }, null)
+                </h4>
+                <p>@item.Description</p>
+                <div class="grid_1 simpleCart_shelfItem">
+
+                    <div class="item_add"><span class="item_price"><h6>Rs.@item.Price</h6></span></div>
+                </div>
+            </div>
+        </div>
+        i++;
+        if (i==4)
+        {
+            @Html.Raw("<div class=\"clearfix\"></div></div>");
+            i = 0;
+        }
+    }
+}

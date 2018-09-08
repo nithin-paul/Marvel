@@ -1,0 +1,5 @@
+﻿@model IEnumerable<MarvelAdmin.Models.CategoryVM>
+@foreach (var cat in Model)
+{
+    <li id="menu-academico-avaliacoes"><a href="/Home?id=@cat.Id"><i class="fa fa-th-list"></i> <span>@cat.Name</span></a></li>    
+}

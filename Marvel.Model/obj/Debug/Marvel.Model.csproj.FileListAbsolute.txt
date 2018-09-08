@@ -8,3 +8,8 @@ E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Model\bin\Debug\Marvel.Model.pdb
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.csproj.CoreCompileInputs.cache
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.dll
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Model\bin\Debug\Marvel.Model.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Model\bin\Debug\Marvel.Model.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.csproj.CoreCompileInputs.cache
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Model\obj\Debug\Marvel.Model.pdb

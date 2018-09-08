@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MarvelAdmin.Models.ItemVM>
+
+@{ int i = 0;}
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="product">
+            <div class="product-desc">
+                <div class="product-img">
+                    @if (item.Images != null && item.Images.FirstOrDefault(x => x.IsPrimary) != null)
+                    {
+                        <img src="~/Content/Images/@(Path.GetFileNameWithoutExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name) + "_thumb" + Path.GetExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name))" class="img-responsive" alt="">
+                    }
+                    else
+                    {
+                        // default image
+                    }
+                </div>
+                <div class="prod1-desc">
+                    <h5><a class="product_link" href="/Home/Details/@item.Id">@item.Name</a></h5>
+                    <p class="product_descr"> @item.Description </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>        
+    }
+}

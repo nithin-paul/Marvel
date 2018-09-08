@@ -1,0 +1,58 @@
+﻿@model MarvelAdmin.Models.SliderVM
+
+<h2>Add/Update Slider</h2>
+@if (TempData["Success"] != null)
+{<p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+}
+@if (TempData["Error"] != null)
+{
+    <p class="alert alert-danger" id="errorMessage">@Html.Raw(TempData["Error"])</p>
+}
+@using (Html.BeginForm("Slider", "Home", new { id = ViewBag.Id ?? null }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Image, new { type = "file" })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @if (Model != null && !String.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="form-group">
+                @Html.Label("Uploaded Image", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <img src="/Content/Images/@Model.ImageUrl" width="100%" />
+                </div>
+            </div>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@ViewBag.ButtonName" class="btn btn-primary" />
+                @if (ViewBag.Id != null)
+                {
+                <a href="/Home/Slider/Delete/@ViewBag.Id" class="btn btn-danger">Delete</a>
+                }
+            </div>
+        </div>
+    </div>
+}

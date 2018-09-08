@@ -80,20 +80,20 @@ input {
     outline: none !important;
 }
 
-
-img {
-    max-width: 100%;
+.price-new {
+    color: #dd6d8c;
+    font-weight: bold;
+    font-size: 20px;
 }
-
-
-
+.price-old {
+    color: #dd6d8c;
+    font-weight: bold;
+    font-size: 20px;
+}
 /****Heads****/
-
-
 h1, h2, h3, h4, h5, h6 {
     color: #dd6d8c;
     font-weight: bold;
-
     text-align: center;
     font-family: 'BenchNine', 'sans-serif';
 }
@@ -736,6 +736,17 @@ footer {
         padding-right: 0;
     }
 
+    header nav {
+        width: 80%;
+        height: auto;
+        position: fixed;
+        right: 100%;
+        top: 63px;
+        overflow: hidden;
+        height: 100%;
+        display:block;
+    }
+
 }
 
 @media only screen and (max-width: 979px) {
@@ -939,4 +950,172 @@ h1 a {
     font-size: 13px;
 }
 
+}
+.nav-bar {
+    display: none;
+}
+
+header nav {
+    z-index: 1000;
+    width: 100%;
+    margin: auto;
+    display:block;
+}
+
+    header nav ul {
+        list-style: none;
+    }
+
+        header nav ul li {
+            float: left;
+            position: relative;
+        }
+
+    header nav:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    header nav ul li a {
+        color: #fff;
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'BenchNine', 'sans-serif'
+    }
+.SelectedTab {
+    color: #dd6d8c;
+}
+    header nav ul li:hover {
+
+    }
+
+
+    header nav ul li i {
+        margin-right: 10px;
+    }
+
+    header nav ul li:hover .children {
+        display: block;
+    }
+
+    header nav ul li .children {
+        display: none;
+        background: #000;
+        position: absolute;
+        width: 150%;
+        z-index: 1000;
+    }
+
+        header nav ul li .children span {
+            display: none;
+        }
+
+        header nav ul li .children li {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+
+            header nav ul li .children li a {
+                margin-left: 30px;
+            }
+
+    header nav ul li .fa-angle-down {
+        position: relative;
+        top: 3px;
+    }
+@media all and (max-width: 800px) {
+    header nav {
+        z-index: 1000;
+        width: 100%;
+        margin: auto;
+        display: block;
+        background: #000;
+    }
+    body {
+        padding-top: 80px;
+    }
+    header nav ul li .children {
+        display: none;
+        background: #000;
+        position: absolute;
+        width: 150%;
+        z-index: 1000;
+    }
+    .nav-bar {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: #000;
+    }
+
+        .nav-bar span {
+            float: left;
+            font-size: 20px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .nav-bar .fa-bars {
+            display: block;
+            padding: 20px;
+            color: #fff;
+            overflow: hidden;
+            font-size: 20px;
+            text-decoration: none;
+            float: right;
+        }
+
+    header nav {
+        width: 80%;
+        height: auto;
+        position: fixed;
+        right: 100%;
+        top: 63px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+        header nav ul li {
+            display: block;
+            border-bottom: 1px solid #fff;
+            width: 100%;
+        }
+
+    header ul li a {
+        display: block;
+    }
+
+    header nav ul li .children {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: none;
+    }
+
+    header nav ul li:hover .children {
+        display: none;
+    }
+
+    header nav ul li ul li:first-child {
+        border-top: 1px solid #fff;
+    }
+
+    header nav ul li .children span {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    header nav ul li .children a {
+        margin-left: 10px;
+        padding: 5px 0;
+    }
+
+    header nav ul li .fa-angle-down {
+        position: relative;
+        top: 3px;
+    }
 }

@@ -19,3 +19,16 @@ E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\System.ValueTuple.xml
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.csproj.CoreCompileInputs.cache
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.dll
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\Marvel.Utils.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\Marvel.Utils.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\AutoMapper.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\System.ValueTuple.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\AutoMapper.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\AutoMapper.xml
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\System.ValueTuple.xml
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.csproj.CoreCompileInputs.cache
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.csproj.CopyComplete
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\obj\Debug\Marvel.Utils.csprojAssemblyReference.cache
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.Utils\bin\Debug\System.Drawing.Common.dll

@@ -1,79 +1,29 @@
-﻿@{
+﻿@model IEnumerable<MarvelAdmin.Models.CategoryVM>
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="w_content">
-<div class="women">
-    <a href="#"><h4>Enthecwear - <span>4449 items</span> </h4></a>
-    <!-- <ul class="w_nav">
-                <li>Sort : </li>
-                <li><a class="active" href="#">popular</a></li> |
-                <li><a href="#">new </a></li> |
-                <li><a href="#">discount</a></li> |
-                <li><a href="#">price: Low High </a></li>
-                <div class="clear"></div>
-     </ul>-->
-    <div class="clearfix"></div>
-</div>
+    @if (Model != null)
+    {
+
 <!-- grids_of_4 -->
-<div class="grids_of_4">
-    <div class="grid1_of_4">
-        <div class="content_box">
-            <a href="details.html">
-                <img src="~/Content/Images/w9.jpg" class="img-responsive" alt="">
-            </a>
-            <h4><a href="details.html"> Duis autem</a></h4>
-            <p>It is a long established fact that</p>
-            <div class="grid_1 simpleCart_shelfItem">
-
-                <div class="item_add"><span class="item_price"><h6>ONLY $80.00</h6></span></div>
-                <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-            </div>
-        </div>
+foreach (MarvelAdmin.Models.CategoryVM cat in Model)
+{
+    <div class="women">
+        <a href="#"><h4>@cat.Name</h4></a>
+        <ul class="w_nav">
+            <li><a href="/Home/Category/@cat.Id">Edit</a></li> |
+            <li><a href="/Home/Items?catId=@cat.Id">Add Items </a></li> |
+            <li><a href="/Home/Category/Delete/@cat.Id">Delete </a></li>
+        </ul>
+        <div class="clearfix"></div>
     </div>
-    <div class="grid1_of_4">
-        <div class="content_box">
-            <a href="details.html">
-                <img src="~/Content/Images/w10.jpg" class="img-responsive" alt="">
-            </a>
-            <h4><a href="details.html"> Duis autem</a></h4>
-            <p>It is a long established fact that</p>
-            <div class="grid_1 simpleCart_shelfItem">
-
-                <div class="item_add"><span class="item_price"><h6>ONLY $65.00</h6></span></div>
-                <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-            </div>
-        </div>
+    <div class="grids_of_4">
+        @Html.Action("ItemListing", "Home", new { id = @cat.Id })
+        <div class="clearfix"></div>
     </div>
-    <div class="grid1_of_4">
-        <div class="content_box">
-            <a href="details.html">
-                <img src="~/Content/Images/w11.jpg" class="img-responsive" alt="">
-            </a>
-            <h4><a href="details.html"> Duis autem</a></h4>
-            <p>It is a long established fact that</p>
-            <div class="grid_1 simpleCart_shelfItem">
-
-                <div class="item_add"><span class="item_price"><h6>ONLY $90.00</h6></span></div>
-                <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="grid1_of_4">
-        <div class="content_box">
-            <a href="details.html">
-                <img src="~/Content/Images/w12.jpg" class="img-responsive" alt="">
-            </a>
-            <h4><a href="details.html"> Duis autem</a></h4>
-            <p>It is a long established fact that</p>
-            <div class="grid_1 simpleCart_shelfItem">
-
-                <div class="item_add"><span class="item_price"><h6>ONLY $75.00</h6></span></div>
-                <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="clearfix"></div>
-</div>
+}
 <!-- end grids_of_4 -->
+    }
 	</div>
 <div class="clearfix"></div>

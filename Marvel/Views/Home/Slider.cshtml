@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Marvel.Models.SliderVM>
+@if (Model != null)
+{
+
+    <div class="main">
+        <div class="slider_wrapper">
+            <div id="camera_wrap" class="">
+                @foreach (var slider in Model)
+                {
+                    <div data-src="/Content/Images/@slider.ImageUrl">
+                        <div class="caption fadeIn">
+                            <div class="title">@slider.Title</div>
+                            <p>@slider.Description</p>
+                            <a href="/Home/About">Learn More</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+}

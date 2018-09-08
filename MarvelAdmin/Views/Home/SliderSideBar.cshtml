@@ -1,0 +1,8 @@
+﻿@model IEnumerable<MarvelAdmin.Models.SliderVM>
+@if (Model != null)
+{
+    foreach (var slider in Model)
+    {
+        <li id="menu-academico-avaliacoes"><a href="/Home/Slider?id=@slider.Id"><i class="fa fa-th-list"></i> <span>@slider.ImageUrl</span></a></li>
+    }
+}

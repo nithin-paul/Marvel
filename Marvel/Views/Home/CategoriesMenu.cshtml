@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Marvel.Models.CategoryVM>
+@if (Model != null)
+{
+    <ul class="children">
+    @foreach (var categories in Model)
+    {
+        <li style="padding-top: 20px;"><a href="/Home/Items/@categories.Id"><i class="fa fa-list"></i> @categories.Name</a></li>
+    }
+    </ul>
+
+}

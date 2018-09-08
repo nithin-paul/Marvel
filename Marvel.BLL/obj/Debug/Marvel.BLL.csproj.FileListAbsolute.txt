@@ -32,3 +32,21 @@ E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.csprojResolveAssem
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.csproj.CoreCompileInputs.cache
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.dll
 E:\WORKS\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.BLL.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.BLL.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.DAC.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.Model.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.Utils.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\AutoMapper.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\System.ValueTuple.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.DAC.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.Model.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\Marvel.Utils.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\AutoMapper.pdb
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\AutoMapper.xml
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\bin\Debug\System.ValueTuple.xml
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.csprojAssemblyReference.cache
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.csproj.CoreCompileInputs.cache
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.csproj.CopyComplete
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.dll
+D:\My Works\Marvel\Marvel\MarvelWEB-NEW\Marvel.BLL\obj\Debug\Marvel.BLL.pdb

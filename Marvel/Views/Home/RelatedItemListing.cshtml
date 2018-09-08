@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Marvel.Models.ItemVM>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div style="margin-bottom:2%">
+            <div class="" style="float:left;">
+                @if (item.Images != null && item.Images.FirstOrDefault(x => x.IsPrimary) != null)
+                {
+                    <a href="/Home/Item/@item.Id">
+                        <img src="~/Content/Images/@(Path.GetFileNameWithoutExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name) + "_thumb" + Path.GetExtension(item.Images.FirstOrDefault(x => x.IsPrimary).Name))" class="img-responsive" alt="">
+                    </a>
+                }
+            </div>
+            <div style="float:left;font-size:16px;width:45%;padding-left:5%">
+                <h3 style="padding-top:0%">
+                    <a href="/Home/Item/@item.Id">@item.Name</a>
+                </h3>
+                <p> @item.Description </p>
+                <span class="text">Price: </span>
+                @if (item.OfferPercent > 0)
+                {
+                    var offerPrice = item.Price - (item.Price * (item.OfferPercent / 100));
+                    @Html.Raw("<span class='price-new'>Rs." + @offerPrice + "</span> <del><span class='price-old'> Rs." + item.Price + "</span></del>");
+                }
+                else
+                {
+                    @Html.Raw("<span class=\"price-new\">Rs." + @item.Price + "</span>");
+                }
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    }
+}

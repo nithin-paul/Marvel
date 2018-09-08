@@ -4,6 +4,7 @@
     <title>Marvel | Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="~/Content/Images/fav.png">
     <meta name="keywords" content="Marvel, Bags, shopping" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
@@ -23,82 +24,24 @@
         <div class="left-content">
             <div class="inner-content">
                 <div class="header_bg">
-                    <div class="header">
-                        <div class="head-t">
-                            <div class="logo">
-                                <a href="index.html"><img src="~/Content/Images/logo.png" class="img-responsive" alt=""> </a>
-                            </div>
+                    <div class="header" style="padding-left:20px">
+                                <a href="/Home"><img src="~/Content/Images/logo.png" class="img-responsive" alt=""> </a>
+
                             <div class="clearfix"> </div>
-                        </div>
                     </div>
                 </div>
                 <!-- //header-ends -->
                 <!--content-->
                 <div class="content">
-                    <div class="women_main">
+                    <div class="women_main" style="padding:20px">
                         @RenderBody()
-                        <div class="foot-top">
-
-                            <div class="col-md-6 s-c">
-                                <li>
-                                    <div class="fooll">
-                                        <h1>follow us on</h1>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="social-ic">
-                                        <ul>
-                                            <li><a href="#"><i class="facebok"> </i></a></li>
-                                            <li><a href="#"><i class="twiter"> </i></a></li>
-                                            <li><a href="#"><i class="goog"> </i></a></li>
-                                            <li><a href="#"><i class="be"> </i></a></li>
-                                            <div class="clearfix"></div>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="clearfix"> </div>
-
-                        </div>
                         <div class="footer">
-                            <div class="col-md-3 cust">
-                                <h4>CUSTOMER CARE</h4>
-                                <li><a href="contact.html">Help Center</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="details.html">How To Buy</a></li>
-                                <li><a href="checkout.html">Delivery</a></li>
-                            </div>
-                            <div class="col-md-2 abt">
-                                <h4>ABOUT US</h4>
-                                <li><a href="products.html">Our Stories</a></li>
-                                <li><a href="products.html">Press</a></li>
-                                <li><a href="faq.html">Career</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </div>
-                            <div class="col-md-2 myac">
-                                <h4>MY ACCOUNT</h4>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="checkout.html">My Cart</a></li>
-                                <li><a href="checkout.html">Order History</a></li>
-                                <li><a href="details.html">Payment</a></li>
-                            </div>
-                            <div class="col-md-5 our-st">
-                                <div class="our-left">
-                                    <h4>OUR STORES</h4>
-                                </div>
-
-                                <li><i class="add"> </i>Mark peter</li>
-                                <li><i class="phone"> </i>012-586987</li>
-                                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></li>
-                            </div>
-                            <div class="clearfix"> </div>
                             <p>© @DateTime.Now.Year Marvel</p>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         <!--/sidebar-menu-->
         <div class="sidebar-menu">
             <header class="logo1">
@@ -107,41 +50,61 @@
             <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
             <div class="menu">
                 <ul id="menu">
-                    <li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+                    <li><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>
                     <li id="menu-academico">
-                        <a href="#"><i class="fa fa-table"></i> <span> New Arrivals</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <a href="#"><i class="fa fa-archive"></i> <span>Categories</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="shoes.html">Shoes</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="products.html">Watches</a></li>
-                            <li id="menu-academico-boletim"><a href="sunglasses.html">Sunglasses</a></li>
+                            <li id="menu-academico-avaliacoes">
+                                <a href="/Home/Category"><i class="fa fa-plus-square"></i> <span>Add Category</span></a>
+                            </li>
+                            @Html.Action("CategorySideBar", "Home")
                         </ul>
                     </li>
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-sliders"></i> <span>Sliders</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes">
+                                <a href="/Home/Slider"><i class="fa fa-plus-square"></i> <span>Add Slider</span></a>
+                            </li>
+                            @Html.Action("SliderSideBar", "Home")
+                        </ul>
+                    </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right", @style = "width:100%" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <li>
+                                <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out"></i> <span> Sign Out</span></a>
+                            </li>
+                        }
+                    }
                 </ul>
+                </div>
             </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>	
-        </div>
-    <script>
-                                    var toggle = true;
+        <script>
+            var toggle = true;
 
-                                    $(".sidebar-icon").click(function () {
-                                        if (toggle) {
-                                            $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-                                            $("#menu span").css({ "position": "absolute" });
-                                        }
-                                        else {
-                                            $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-                                            setTimeout(function () {
-                                                $("#menu span").css({ "position": "relative" });
-                                            }, 400);
-                                        }
+            $(".sidebar-icon").click(function () {
+                if (toggle) {
+                    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    $("#menu span").css({ "position": "absolute" });
+                }
+                else {
+                    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    setTimeout(function () {
+                        $("#menu span").css({ "position": "relative" });
+                    }, 400);
+                }
 
-                                        toggle = !toggle;
-                                    });
-    </script>
-    <!--js -->
-    <script src="~/Content/js/jquery.nicescroll.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="~/Content/js/bootstrap.min.js"></script>
-</body>
+                toggle = !toggle;
+            });
+        </script>
+        <!--js -->
+        <script src="~/Content/js/jquery.nicescroll.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="~/Content/js/bootstrap.min.js"></script>
+    </body>
 </html>

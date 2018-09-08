@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link rel="icon" href="~/Content/Images/favicon.ico">
+    <link rel="icon" href="~/Content/Images/fav.png">
     <link rel="shortcut icon" href="~/Content/Images/favicon.ico">
     <link rel="stylesheet" href="~/Content/stuck.css">
     <link rel="stylesheet" href="~/Content/owl.carousel.css">
@@ -15,36 +15,64 @@
     @RenderSection("styles", false)
 </head>
 <body>
-    <header>
-        <div id="stuck_container">
+    <header id="stuck_container">
+        <!-- responsive nav bar -->
+        <div class="nav-bar">
+            <a href=""><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- navigation -->
+        <nav>
+            <ul>
+                <li><a href="/Home"><img src="~/Content/Images/logo.png" alt="Your Happy Family" /></a></li>
+            </ul>
+            <ul style="float: right;position: relative;margin-right:10%;margin-top:2%;vertical-align:text-bottom;">
+                <li style="width:120px;padding-top: 20px;">
+                    @if (ViewBag.Title != "Home")
+                    {
+                        <a href="/Home"><i class="fa fa-home"></i>Home</a>
+                    }
+                    else
+                    {
+                        <a href="/Home" class="SelectedTab"><i class="fa fa-home"></i>Home</a>
+                    }
+                </li>
+                <li class="sub-menu" style="width:150px;padding-top: 20px;">
+                    <a href="#"><i class="fa fa-archive"></i>Category <i class="fa fa-angle-down"></i></a>
+                    @Html.Action("CategoriesMenu", "Home")
+                </li>
+                <li style="width:150px;padding-top: 20px;">
+                    @if (ViewBag.Title != "Contact")
+                    {
+                        <a href="/Home/Contact"><i class="fa fa-envelope"></i>Contact Us</a>
+                    }
+                    else
+                    {
+                        <a href="/Home/Contact" class="SelectedTab"><i class="fa fa-envelope"></i>Contact Us</a>
+                    }
+                </li>
+            </ul>
+        </nav> <!-- navigation end -->
+
+    </header>
+    <div>
+        @RenderBody()
+        <footer>
             <div class="container">
                 <div class="row">
                     <div class="grid_12">
-                        <h1>
-                            <a href="index.html">
-                                <img src="~/Content/Images/logo.png" alt="Your Happy Family">
-                            </a>
-                        </h1>
-                        <div class="menu_block ">
-                            <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-                                <ul class="sf-menu">
-                                    <li><a >File Upload</a></li>
-                                    <li><a>Home</a></li>
-                                    <li><a >Portfolio</a></li>
-                                </ul>
-                            </nav>
-                            <div class="clear"></div>
+                        <div class="footer_socials">
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-google-plus"></a>
+                            <a href="#" class="fa fa-pinterest"></a>
+                        </div>
+                        <div class="copy">
+                            <span class="brand">Marvel</span> © <span id="copyright-year">@DateTime.Now.Year</span>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
@@ -66,6 +94,37 @@
     <script src="~/Scripts/camera.js"></script>
     <!--[if (gt IE 9)|!(IE)]><!-->
     <script src="~/Scripts/jquery.mobile.customized.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var val = 1;
+
+            $(".nav-bar").click(function () {
+
+                if (val == 1) {
+
+                    $("header nav").animate({
+                        'left': '0'
+                    });
+                    val = 0;
+                } else {
+                    val = 1;
+                    $("header nav").animate({
+                        'left': '-100%'
+                    });
+                }
+
+                return false;
+            });
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            $('#stuck_container').tmStickUp({});
+            // submenu
+            $('.sub-menu').click(function () {
+                $(this).children('.children').slideToggle();
+            })
+
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

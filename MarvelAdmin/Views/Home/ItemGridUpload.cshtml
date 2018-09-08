@@ -1,0 +1,25 @@
+﻿@model MarvelAdmin.Models.ItemVM
+
+<hr />
+@foreach (var item in Model.Images)
+{
+    <div class="row" style="padding:2%;border-bottom:solid 1px lightgray">
+        <div class="col-md-10">
+            <img src="~/Content/Images/@item.Name" style="width:50px;height:50px" />
+        </div>
+        <div class="col-md-1">
+            @if (!item.IsPrimary)
+            {
+                @Html.ActionLink("Set As Primary", "SetImageAsPrimary", "Home", new { id = item.Id, itemId = Model.Id }, null)
+
+            }
+        </div>
+        <div class="col-md-1">
+            @if (!item.IsPrimary)
+            {
+                @Html.ActionLink("Delete", "DeleteImage", "Home", new { id = item.Id, itemId = Model.Id }, null)
+            }
+        </div>
+    </div>
+}
+
